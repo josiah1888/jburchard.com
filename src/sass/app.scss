@@ -1,0 +1,15 @@
+$sm: 320px;
+
+.full-width {
+  width: 100%;
+}
+
+
+@media screen and (min-width: $sm) {
+  .nav-sidebar li {
+    background-color: #EEE;
+    margin: 5px auto;
+  }
+}
+
+//asdf
