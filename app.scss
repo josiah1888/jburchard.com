@@ -1,0 +1,19 @@
+$sm: 320px;
+
+.full-width {
+  width: 100%;
+}
+
+.nav-sidebar li {
+  background-color: #EEE;
+}
+
+.jumbotron {
+  background-color: #FBFBFB;
+}
+
+@media screen and (min-width: $sm) {
+  .nav-sidebar li {
+    margin: 5px auto;
+  }
+}

@@ -1,0 +1,14 @@
+.full-width {
+  width: 100%; }
+
+.nav-sidebar li {
+  background-color: #EEE; }
+
+.jumbotron {
+  background-color: #FBFBFB; }
+
+@media screen and (min-width: 320px) {
+  .nav-sidebar li {
+    margin: 5px auto; } }
+
+/*# sourceMappingURL=app.css.map */
