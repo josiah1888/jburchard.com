@@ -16,7 +16,7 @@
                 <img class="img-circle" src="/assets/ninja-man.jpg"/>
 
                 <h3>Josiah Burchard</h3>
-                <h4>Software Developer</h4>
+                <h4>Software Engineer</h4>
             </div>
             <ul class="nav nav-sidebar">
                 <li><a href="/about">About Me</a></li>
@@ -152,20 +152,54 @@ module.exports = function() {
     };
     return tasks;
 
-    function copyFiles(path) {
+    function copyFiles(files, dest) {
         return gulp
-            .src(`src/${path}/**/*.*`)
-            .pipe(gulp.dest(`build/${path}`);
+            .src(files)
+            .pipe(gulp.dest(dest);
         });
     }
 
     function lint(files) {
-
+        var jshint = require('gulp-jshint');
+        return gulp
+            .src(files)
+            .pipe(jshint())
+            .pipe(on('error', () => {console.log('jshint error!');}))
     }
 
     function clean(files) {
-
+        var del = require('del');
+        return del(files);
     }
+}
+</code>
+</pre>
+                <p>
+                    Now we have a completely generic api for our tasks. We can call these functions from any area of our
+                    app and just pass in the files that we need to.
+                    Any maintenance work on the tasks will be done in this file, and any work done in the configuration will be done in the config file for the app.
+                    Oh, let's talk about config files.
+                </p>
+            </section>
+
+            <section class="jumbotron">
+                <h2>Gulp Config</h2>
+<pre>
+<code>
+module.exports = function() {
+    // super-user.gulp.config.js
+    var build = 'build/super-user/';
+    var path = 'src/super-user/';
+    var name = 'super-user';
+
+    var config = {
+        name: name,
+        path: path,
+        js: {
+
+        }
+    }
+
 }
 </code>
 </pre>
