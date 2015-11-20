@@ -15,4 +15,16 @@
   .side-card .img-circle {
     width: 50%; }
 
+.display-inline-block {
+  display: inline-block; }
+
+.padding-small {
+  padding: 10px; }
+
+.margin-none {
+  margin: 0; }
+
+body {
+  background-image: url("/assets/background.jpg"); }
+
 /*# sourceMappingURL=app.css.map */
