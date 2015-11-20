@@ -17,3 +17,12 @@ $sm: 320px;
     margin: 5px auto;
   }
 }
+
+.side-card {
+  @extend .jumbotron;
+  padding: 10px;
+
+  .img-circle {
+    width: 50%;
+  }
+}
