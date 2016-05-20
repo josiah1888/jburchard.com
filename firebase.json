@@ -1,0 +1,12 @@
+{
+  "hosting": {
+    "public": "dist"
+  },
+  "redirects": [
+    {
+      "source": "https://resume.jburchard.com/",
+      "destination": "https://jburchard.com/resume.pdf",
+      "type": 301
+    }
+  ]
+}
