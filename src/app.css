@@ -1,42 +1,18 @@
-.full-width {
-  width: 100%; }
+.feature {
+    padding: 3.5em 3em 1em 7em;
+    width: 50%;
+    border-top: solid 1px rgba(255, 255, 255, 0.15);
+    position: relative;
+}
 
-.nav-sidebar li {
-  background-color: #EEE; }
+.features section {
+    padding: 0;
+    width: 100%;
+    border-top: none;
+    position: unset;
+}
 
-.jumbotron, .side-card {
-  background-color: #FBFBFB; }
-
-.sidebar {
-  position: inherit; }
-
-.side-card {
-  padding: 10px; }
-  .side-card .img-circle {
-    width: 50%; }
-
-.display-inline-block {
-  display: inline-block !important; }
-  
-.logo {
-    height: 32px; }
-
-.padding-small {
-  padding: 10px; }
-
-.margin-none {
-  margin: 0; }
-
-body {
-  background-image: url("/assets/background.jpg"); }
-
-@media screen and (min-width: 320px) {
-  .nav-sidebar li {
-    margin: 5px auto; } }
-@media screen and (min-width: 770px) {
-  .sidebar {
-    position: fixed;
-    top: 10px;
-    left: 10px; } }
-
-/*# sourceMappingURL=app.css.map */
+.spotlights > section > .image {
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
