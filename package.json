@@ -1,0 +1,23 @@
+{
+  "name": "jburchard.com",
+  "version": "1.0.0",
+  "description": "Personal website for Josiah Burchard\r Thanks to [HTML5 UP!](http://html5up.net/) for the rocking template",
+  "main": "gulpFile.js",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josiah1888/jburchard.com.git"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/josiah1888/jburchard.com/issues"
+  },
+  "homepage": "https://github.com/josiah1888/jburchard.com#readme"
+}
