@@ -4,11 +4,13 @@
   "description": "Personal website for Josiah Burchard\r Thanks to [HTML5 UP!](http://html5up.net/) for the rocking template",
   "main": "gulpFile.js",
   "dependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "live-server": "*"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm install && gulp build && live-server dist"
   },
   "repository": {
     "type": "git",
