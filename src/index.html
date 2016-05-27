@@ -5,8 +5,8 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<!--[if lte IE 8]><script src="lib/js/ie/html5shiv.js"></script><![endif]-->
-	<link rel="stylesheet" href="lib/css/main.css" />
-	<link rel="stylesheet" href="/app.css" />
+	<link rel="stylesheet" href="lib/css/main.css" inline />
+	<link rel="stylesheet" href="/app.css" inline />
 	<!--[if lte IE 9]><link rel="stylesheet" href="lib/css/ie9.css" /><![endif]-->
 	<!--[if lte IE 8]><link rel="stylesheet" href="lib/css/ie8.css" /><![endif]-->
 </head>
@@ -15,6 +15,17 @@
 
 	<!-- Sidebar -->
 	<section id="sidebar">
+		<div class="profile-image">
+			<img src="/images/josiah-burchard.jpg" class="profile-image__image" />
+		</div>
+		
+		<div class="social">
+			<a class="social__link" href="https://github.com/josiah1888/"><i class="icon fa-github"></i></a>
+			<a class="social__link" href="https://www.linkedin.com/in/josiahburchard"><i class="icon fa-linkedin"></i></a>
+			<a class="social__link" href="https://www.facebook.com/Josiah.Burchard"><i class="icon fa-facebook"></i></a>
+			<a class="social__link" href="https://twitter.com/JosiahBurchard"><i class="icon fa-twitter"></i></a>
+		</div>
+		
 		<div class="inner">
 			<nav>
 				<ul>
@@ -34,12 +45,12 @@
 		<section id="intro" class="wrapper style1 fullscreen fade-up">
 			<div class="inner">
 				<h1>Josiah Burchard</h1>
-				<p>My name is Josiah Burchard. I work for <a href="https://github.com/vintage-software">Vintage Software</a> as a software
-					developer and a front end engineer. I like large scale single page applications and catering to the highest level of
-					user experience.</p>
-				<!--<ul class="actions">
-					<li><a href="#one" class="button scrolly">Learn more</a></li>
-				</ul>-->
+				<p>
+					My name is Josiah Burchard. I am a software developer and a front-end engineer. I like large scale single page applications
+					and catering to the highest level of user experience. 
+					I'm always looking for new opportunities, feel free to reach out to me at 
+					<a href="mailto:josiah@jburchard.com">josiah@jburchard.com</a>
+				</p>
 			</div>
 		</section>
 
@@ -49,25 +60,24 @@
 				<a href="https://github.com/vintage-software" class="image"><img src="images/vintage-software.gif" alt="" data-position="center center" /></a>
 				<div class="content">
 					<div class="inner">
+						<span class="float-right">2014-2016</span>
 						<h2>Vintage Software</h2>
 						<p>
 							At Vintage Software, we work hard to create and maintain enterprise level websites for clients across the country. We live
 							at the bleeding-edge of technology, using the best tools for every job.
 						</p>
 						<!--Need years on here somewhere-->
-
-						<!--
-											 Design and implement parallel HTML Email Generation for hundreds of thousands of clients
-											 Create and maintain custom integrated Content Management System
-											 Develop and integrate optimized production code deployment process
-											 Advocate and maintain company style guide for code reusability and brand consistency
-											 Design and develop responsive websites for cross browser support and mobile platforms
-											 Maintain scalable back end databases through SQL Server with high-level caching protocols
-										-->
-						<!--<ul class="actions">
-							<li><a href="#" class="button">Learn more</a></li>
-							Should expand or something to see bullet points
-						</ul>-->
+						<button class="js-toggleDetails">Details</button>
+						<div class="js-details display-none">
+							<ul>
+								<li>Design and implement parallel HTML Email Generation for hundreds of thousands of clients</li>
+								<li>Create and maintain custom integrated Content Management System</li>
+								<li>Develop and integrate optimized production code deployment process</li>
+								<li>Advocate and maintain company style guide for code reusability and brand consistency</li>
+								<li>Design and develop responsive websites for cross browser support and mobile platforms</li>
+								<li>Maintain scalable back end databases through SQL Server with high-level caching protocols</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -75,10 +85,11 @@
 				<a href="http://reu.cs.missouri.edu/REU16/index.htm" class="image"><img src="images/mizzou.gif" alt="" data-position="center center" /></a>
 				<div class="content">
 					<div class="inner">
-						<h2>2016 Summer REU Program</h2>
+						<span class="float-right">Summer 2016</span>
+						<h2>Research Experience for Undergraduates Program</h2>
 						<p>
-							Sponsered by the National Science Foundation and held at the University of Missouri, 
-							I will investigate, implement and test viable solutions to technical challenges in consumer networking technologies with other undergraduates.
+							Sponsored by the National Science Foundation and held at the University of Missouri, 
+							I will investigate, implement and test viable solutions to technical challenges in consumer networking technologies with other students.
 						</p>
 					</div>
 				</div>
@@ -87,11 +98,14 @@
 				<a href="http://www.semo.edu/" class="image"><img src="images/semo.png" alt="" data-position="center center" /></a>
 				<div class="content">
 					<div class="inner">
-						<h2>Southeast Missouri State University (2017)</h2>
+						<span class="float-right">Anticipated Spring 2017</span>
+						<h2>Southeast Missouri State University</h2>
 						<p>
 							Bachelor of Science in Computer Science, Minor in Mathematics
-							Southeast Missouri State University – Anticipated Spring 2017 – GPA 3.9 / 4.0
+							Southeast Missouri State University – GPA 3.9 / 4.0
 						</p>
+					</div>
+				</div>
 			</section>
 		</section>
 
@@ -105,13 +119,19 @@
 				<div class="features">
 					<section>
 						<a href="https://github.com/josiah1888/rental-agency"><span class="icon major fa-github"></span></a>
+						<a href="https://github.com/josiah1888/rental-agency">
+							<i class="icon fa-github icon-code"></i>
+						</a>
 						<a href="https://glaring-torch-2375.firebaseapp.com/">
 							<h3>JBurchard Rentals</h3>
 							<p>Demo site using Angular2 + Typescript + Firebase. You can view and edit property listings, then share them to Facebook.</p>
 						</a>
 					</section>
 					<section>
-						<a href="https://github.com/josiah1888/rental-agency"><span class="icon major fa-github"></span></a>
+						<a href="https://github.com/josiah1888/game-dev"><span class="icon major fa-github"></span></a>
+						<a href="https://github.com/josiah1888/game-dev">
+							<i class="icon fa-github icon-code"></i>
+						</a>
 						<a href="https://github.com/josiah1888/game-dev">
 							<h3>Jump Death</h3>
 							<p>2D Platformer game using C# XNA Studio. Multiple intelligent enemies, audio/visual effects, ten levels, parallel processing
@@ -119,7 +139,10 @@
 						</a>
 					</section>
 					<section>
-						<a href="https://github.com/josiah1888/rental-agency"><span class="icon major fa-github"></span></a>
+						<a href="https://github.com/josiah1888/taptap"><span class="icon major fa-github"></span></a>
+						<a href="https://github.com/josiah1888/taptap">
+							<i class="icon fa-github icon-code"></i>
+						</a>
 						<a href="https://github.com/josiah1888/taptap">
 							<h3>Tap Tap</h3>
 							<p>A fun rhythm-based single page application rocking AngularJS + HTML5.</p>
@@ -142,7 +165,10 @@
 						</a>
 					</section>
 					<section>
-						<a href="https://github.com/josiah1888/rental-agency"><span class="icon major fa-github"></span></a>
+						<a href="https://github.com/josiah1888/jburchard.com"><span class="icon major fa-github"></span></a>
+						<a href="https://github.com/josiah1888/jburchard.com">
+							<i class="icon fa-github icon-code"></i>
+						</a>
 						<a href="#intro">
 							<h3>JBurchard.com</h3>
 							<p>The code for this site is completely public, no secrets in here.</p>
@@ -152,7 +178,7 @@
 						<span class="icon major fa-code"></span>
 						<a href="https://developers.google.com/speed/pagespeed/insights/?url=http%3A%2F%2Fjburchard.com%2F">
 							<h3>Google Pagespeed Insights</h3>
-							<p>Performance is always a priority in web design. See what Google thinks about this site</p>
+							<p>Performance is always a priority in web design. See what Google thinks about jburchard.com</p>
 						</a>
 					</section>
 				</div>
@@ -182,7 +208,7 @@
 	<script src="lib/js/util.js"></script>
 	<!--[if lte IE 8]><script src="lib/js/ie/respond.min.js"></script><![endif]-->
 	<script src="lib/js/main.js"></script>
-
+	<script src="/app.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
 </body>
-
 </html>
