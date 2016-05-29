@@ -2,26 +2,11 @@
   "hosting": {
     "public": "dist"
   },
-  "redirects": [
-    {
-      "source": "https://resume.jburchard.com/",
-      "destination": "https://jburchard.com/resume.pdf?1",
-      "type": 301
-    },
-    {
-      "source": "https://resume.jburchard-com.firebaseapp.com/",
-      "destination": "https://jburchard-com.firebaseapp.com/resume.pdf?2",
-      "type": 301
-    },
-    {
-      "source": "https://rentals.jburchard.com/",
-      "destination": "https://glaring-torch-2375.firebaseapp.com/?3",
-      "type": 301
-    },
-    {
-      "source": "https://rentals.jburchard-com.firebaseapp.com/",
-      "destination": "https://glaring-torch-2375.firebaseapp.com/?4",
-      "type": 301
-    }
-  ]
+  "headers": [{
+    "source" : "**",
+    "headers" : [ {
+      "key" : "Cache-Control",
+      "value" : "max-age=529200"
+      } ]
+  }]
 }
