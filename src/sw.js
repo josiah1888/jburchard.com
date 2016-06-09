@@ -23,7 +23,7 @@ this.addEventListener('install', function(event) {
 });
 
 self.addEventListener('fetch', function(event) {
-  if (event.request.url.indexOf('google-analytics.com/collect') === -1) {
+  if (event.request.url.indexOf('http') === -1) {
     event.respondWith(
       caches.match(event.request).then(function(response) {
         if (response) {
