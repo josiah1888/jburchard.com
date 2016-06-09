@@ -93,8 +93,10 @@
     font-size: 35px;
 }
 
-.features section:hover .icon-code {
-    display: unset;
+@media screen and (min-width: 540px) {
+    .features section:hover .icon-code {
+        display: unset;
+    }
 }
 .spotlights > section > .image {
     background-size: contain;

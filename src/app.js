@@ -5,3 +5,7 @@ $(document).ready(function() {
         $(this).next('.js-details').toggle(800);
     });    
 });
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js', { scope: '/' });
+}
