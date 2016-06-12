@@ -1,6 +1,6 @@
-this.addEventListener('install', function(event) {
+this.addEventListener('install', function (event) {
   event.waitUntil(
-    caches.open('v1').then(function(cache) {
+    caches.open('v1').then(function (cache) {
       return cache.addAll([
         '/',
         '/index.html',
@@ -22,23 +22,35 @@ this.addEventListener('install', function(event) {
   );
 });
 
-self.addEventListener('fetch', function(event) {
-  if (event.request.url.indexOf('http') === -1) {
+this.addEventListener('fetch', function (event) {
+  if (event.request.url.indexOf('https://www.google-analytics.com/collect') === -1) {
+    // Doesn't get a well formatted response
     event.respondWith(
-      caches.match(event.request).then(function(response) {
+      caches.match(event.request).then(function (response) {
         if (response) {
+          fetchForCache(event.request);
           return response;
+        } else {
+          return fetchForCache(event.request);
         }
-
-        return fetch(event.request).then(function(response) {
-          caches.open('v1').then(function(cache) {
-            cache.put(event.request, response);
-          })
-          .catch(undefined);
-
-          return response;
-        }).catch(undefined);
-      })
+      }).catch(undefined)
     );
   }
 });
+
+function fetchForCache(request) {
+  return fetch(request)
+    .then(function (response) {
+      return updateCache(request, response);
+    })
+    .catch(undefined);
+}
+
+function updateCache(request, response) {
+  caches.open('v1')
+    .then(function (cache) {
+      cache.put(request, response);
+    });
+
+  return response;
+}
