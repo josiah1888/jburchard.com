@@ -4,7 +4,6 @@ this.addEventListener('install', function (event) {
       return cache.addAll([
         '/',
         '/index.html',
-        '/app.css',
         '/app.js',
         '/images/intro.svg',
         '/images/josiah-burchard.jpg',
@@ -16,7 +15,12 @@ this.addEventListener('install', function (event) {
         '/lib/js/jquery.scrolly.min.js',
         '/lib/js/main.js',
         '/lib/js/util.js',
-        '/lib/js/skel.min.js'
+        '/lib/js/skel.min.js',
+        '/lib/fonts/fontawesome-webfont.eot',
+        '/lib/fonts/fontawesome-webfont.svg',
+        '/lib/fonts/fontawesome-webfont.woff',
+        '/lib/fonts/fontawesome-webfont.woff2',
+        '/lib/fonts/fontawesome-webfont.ttf'
       ]);
     }).catch(undefined)
   );
