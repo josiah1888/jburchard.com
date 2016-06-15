@@ -4,23 +4,17 @@ this.addEventListener('install', function (event) {
       return cache.addAll([
         '/',
         '/index.html',
-        '/app.js',
         '/images/intro.svg',
         '/images/josiah-burchard.jpg',
         '/images/semo.png',
         '/images/vintage-software.gif',
         '/images/panaceas-cloud.jpg',
-        '/lib/js/jquery.min.js',
-        '/lib/js/jquery.scrollex.min.js',
-        '/lib/js/jquery.scrolly.min.js',
-        '/lib/js/main.js',
-        '/lib/js/util.js',
-        '/lib/js/skel.min.js',
-        '/lib/fonts/fontawesome-webfont.eot',
-        '/lib/fonts/fontawesome-webfont.svg',
-        '/lib/fonts/fontawesome-webfont.woff',
-        '/lib/fonts/fontawesome-webfont.woff2',
-        '/lib/fonts/fontawesome-webfont.ttf'
+        '/lib/js/all.js',
+        '/lib/fonts/fontawesome-webfont.eot?v=4.6.3',
+        '/lib/fonts/fontawesome-webfont.svg?v=4.6.3',
+        '/lib/fonts/fontawesome-webfont.woff?v=4.6.3',
+        '/lib/fonts/fontawesome-webfont.woff2?v=4.6.3',
+        '/lib/fonts/fontawesome-webfont.ttf?v=4.6.3'
       ]);
     }).catch(undefined)
   );
