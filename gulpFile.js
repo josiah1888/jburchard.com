@@ -18,10 +18,10 @@ gulp.task('build', ['build-all'], function() {
         .pipe(useref())
         .pipe(inlineSource({rootpath: 'dist'}))
         .pipe(index)
-        .pipe(htmlmin({
-            collapseWhitespace: true,
-            removeComments: true
-        }))
+        // .pipe(htmlmin({
+        //     collapseWhitespace: true,
+        //     removeComments: true
+        // }))
         .pipe(index.restore)
         .pipe(gulp.dest(DIST));
 });
@@ -33,11 +33,11 @@ gulp.task('build-all', function() {
     
     return gulp.src('src/**/*.*')
         .pipe(js)
-        .pipe(uglify())
+        //.pipe(uglify())
         .pipe(js.restore)
         .pipe(css)
-        .pipe(uncss({html: ['**/index.html']}))
-        .pipe(csso())
+        //.pipe(uncss({html: ['**/index.html']}))
+        //.pipe(csso())
         .pipe(css.restore)
         .pipe(images)
         .pipe(imagemin())
