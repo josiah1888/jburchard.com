@@ -12,9 +12,9 @@ var useref = require('gulp-useref');
 var DIST = 'dist/';
 
 gulp.task('build', ['build-all'], function() {
-    var index = filter(['**/index.html'], {restore: true});
+    var index = filter(['**/*.html'], {restore: true});
 
-    return gulp.src('src/index.html')
+    return gulp.src(['src/index.html', 'src/blog.html'])
         .pipe(useref())
         .pipe(inlineSource({rootpath: 'dist'}))
         .pipe(index)
@@ -36,7 +36,7 @@ gulp.task('build-all', function() {
         .pipe(uglify())
         .pipe(js.restore)
         .pipe(css)
-        .pipe(uncss({html: ['**/index.html'], ignore: ['#sidebar.menu-active>.inner.menu', '#sidebar.menu-active']}))
+        .pipe(uncss({html: ['**/index.html', '**/blog.html'], ignore: ['#sidebar.menu-active>.inner.menu', '#sidebar.menu-active']}))
         .pipe(csso())
         .pipe(css.restore)
         .pipe(images)
