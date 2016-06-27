@@ -2,6 +2,10 @@
     display: none;
 }
 
+code {
+    display: inline-block;
+}
+
 .float-right {
     float: right;
 }
