@@ -47,7 +47,9 @@ function fetchForCache(request) {
 function updateCache(request, response) {
   caches.open('v1')
     .then(function (cache) {
-      cache.put(request, response);
+      if (response && response.ok) {
+        cache.put(request, response.clone());
+      }
     });
 
   return response;
