@@ -21,7 +21,8 @@ this.addEventListener('install', function (event) {
 });
 
 this.addEventListener('fetch', function (event) {
-  if (event.request.url.indexOf('https://www.google-analytics.com/collect') === -1) {
+  var url = event.request.url;
+  if (url.indexOf('https://www.google-analytics.com/collect') === -1 && url.indexOf('data') !== 0) {
     // Doesn't get a well formatted response
     event.respondWith(
       caches.match(event.request).then(function (response) {
