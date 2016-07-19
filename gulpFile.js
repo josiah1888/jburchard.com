@@ -11,7 +11,7 @@ var useref = require('gulp-useref');
 
 var DIST = 'dist/';
 
-gulp.task('build', ['build-all'], function() {
+gulp.task('build', ['build-all', 'sitemap'], function() {
     var html = filter(['**/*.html'], {restore: true});
 
     return gulp.src(['src/**/*.html', '!**/googledeb6aa7f54e627ec.html'])
@@ -43,4 +43,23 @@ gulp.task('build-all', function() {
         .pipe(imagemin())
         .pipe(images.restore)
         .pipe(gulp.dest(DIST))
+});
+
+gulp.task('sitemap', function(done) {
+    var sm = require('sitemap');
+    var fs = require('fs');
+
+    var pages = [
+        { url: '/'},
+        { url: '/blog/'},
+        { url: '/blog/scoring-100-pagespeed-insights'}
+        ];
+ 
+    var sitemap = sm.createSitemap({
+        hostname: 'https://jburchard.com', 
+        urls: pages
+    });
+ 
+    fs.writeFileSync(DIST + 'sitemap.xml', sitemap.toString());
+    return done();
 });
