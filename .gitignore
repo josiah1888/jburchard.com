@@ -4,4 +4,4 @@ dist/*
 node_modules/*
 npm-debug.log
 .vscode/*
-**/.DS_Store
+.DS_Store
