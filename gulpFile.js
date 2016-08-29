@@ -59,7 +59,8 @@ gulp.task('sitemap', function(done) {
     var pages = [
         { url: '/'},
         { url: '/blog/'},
-        { url: '/blog/scoring-100-pagespeed-insights'}
+        { url: '/blog/scoring-100-pagespeed-insights'},
+        { url: '/blog/academic-research-computer-science'},
         ];
  
     var sitemap = sm.createSitemap({
