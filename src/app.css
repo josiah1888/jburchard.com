@@ -122,6 +122,13 @@ code {
     display: none;
 }
 
+.footer-menu {
+     font-size: .8em; 
+     color: rgba(255,255,255,.15);
+     list-style: none;
+     padding: 0;
+}
+
 @media screen and (max-width: 736px) {
     #sidebar {
         display: unset;
