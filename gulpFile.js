@@ -22,7 +22,7 @@ gulp.task('build', ['build-all', 'sitemap'], function() {
         .pipe(inject(gulp.src(['src/partials/scripts.html']), createInjectOptions('scripts')))
         .pipe(inject(gulp.src(['src/partials/sidebar.html']), createInjectOptions('sidebar')))
         .pipe(gIf('index.html', inject(gulp.src(''), injectSidebarLinks())))
-        .pipe(useref({searchPath: ['.', '../']}))
+        .pipe(useref({searchPath: ['.', '../', 'src']}))
         .pipe(inlineSource({rootpath: 'dist'}))
         .pipe(html)
         .pipe(htmlmin({

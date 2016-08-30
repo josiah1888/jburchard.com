@@ -21,8 +21,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm install && gulp build && live-server dist"
+    "start": "npm install && gulp build && http-server dist"
   },
   "repository": {
     "type": "git",
