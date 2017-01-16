@@ -88,7 +88,7 @@ function injectSidebarLinks() {
             return `
                 <li><a class="sidebar__link" href="#intro">Welcome</a></li>
                 <li><a class="sidebar__link" href="#one">Experience</a></li>
-                <li><a class="sidebar__link" href="#two">Projects</a></li>` 
+                <li><a class="sidebar__link" href="#two">Personal Projects</a></li>` 
         }
     }
 }
