@@ -129,11 +129,11 @@ code {
      padding: 0;
 }
 
-#wrapper {
+#wrapper, #footer {
     padding-left: 18em;
 }
 
-@media screen and (max-width: 736px) {
+@media screen and (max-width: 1280px) {
     #sidebar {
         display: unset;
         height: 3.0em;
@@ -151,6 +151,7 @@ code {
     }
     
     .social {
+        position: absolute;
         left: initial;
         width: 100%;
     }
@@ -168,13 +169,7 @@ code {
         position: absolute;
         right: 5px;
     }
-}
 
-@media screen and (max-width: 1280px) { 
-    .social {
-        position: absolute;
-    }
-    
     .profile-image {
         display: none;
     }
@@ -183,7 +178,7 @@ code {
         display: block;   
     }
 
-    #wrapper {
+    #wrapper, #footer {
         padding-left: 0;
     }
 }

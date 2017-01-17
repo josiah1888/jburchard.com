@@ -87,8 +87,9 @@ function injectSidebarLinks() {
         transform: function () {
             return `
                 <li><a class="sidebar__link" href="#intro">Welcome</a></li>
-                <li><a class="sidebar__link" href="#one">Experience</a></li>
-                <li><a class="sidebar__link" href="#two">Personal Projects</a></li>` 
+                <li><a class="sidebar__link" href="#experience">Experience</a></li>
+                <li><a class="sidebar__link" href="#past-work">Past Work</a></li>
+                <li><a class="sidebar__link" href="#projects">Personal Projects</a></li>` 
         }
     }
 }
