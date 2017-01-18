@@ -36,7 +36,7 @@ gulp.task('build', ['build-all', 'sitemap'], function() {
 gulp.task('build-all', function() {
     var js = filter(['**/*.js'], {restore: true});
     var css = filter(['**/*.css'], {restore: true});
-    var images = filter(['**/*.(gif|jpg|svg|png)'], {restore: true});
+    var images = filter(['**/*.gif', '**/*.jpg', '**/*.svg', '**/*.png'], {restore: true});
     
     return gulp.src('src/**/*.*')
         .pipe(js)
