@@ -1,3 +1,13 @@
+.margin-sm {
+    margin: 35px 0;
+}
+
+.scroll-x {
+    overflow: auto;
+    word-wrap: normal;
+    white-space: pre;
+}
+
 .unlink {
     text-decoration: none;
     border: 0;
@@ -20,7 +30,7 @@
 }
 
 code {
-    display: inline-block;
+    display: block;
 }
 
 .float-right {

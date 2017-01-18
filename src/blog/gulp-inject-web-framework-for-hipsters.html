@@ -1,0 +1,271 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Gulp Inject: The Web Framework for Hipsters</title>
+  <!-- inject:head:html -->
+  <!-- endinject -->
+  <meta property="og:url" content="https://jburchard.com/blog/gulp-inject-web-framework-for-hipsters">
+  <meta name="description" content="With Great Power comes a Great Learning Curve. Try something different for your small programming needs.">
+  <meta name="twitter:title" content="Gulp Inject: The Web Framework for Hipsters">
+  <meta name="twitter:description" content="With Great Power comes a Great Learning Curve. Try something different for your small programming needs.">
+  <meta property="og:title" content="Gulp Inject: The Web Framework for Hipsters">
+  <meta property="og:description" content="With Great Power comes a Great Learning Curve. Try something different for your small programming needs.">
+</head>
+
+<body>
+
+  <!-- inject:sidebar:html -->
+  <!-- endinject -->
+
+  <div id="wrapper">
+    <section id="intro" class="wrapper style1 fullscreen fade-up">
+      <div class="inner blog-container">
+        <div class="profile-image profile-image__center">
+          <img src="/images/josiah-burchard.jpg" class="profile-image__image" />
+        </div>
+        <div>
+          <h1 class="text-center">Gulp Inject: The Web Framework for Hipsters</h1>
+          <p>
+
+            Today’s web frameworks are powerful champions that can serve the highest quality user experience featuring full interactive
+            web apps with all the bells and whistles you didn’t know you needed. Seriously, frameworks like Angular and React
+            are really great tools when you have a hefty project and want to provide the best user interaction experience.
+          </p>
+          <p>
+
+            That kind of power is not for everybody, because with great power comes a great learning curve, huge amounts of boilerplate
+            framework-specific code and the maintenance required to keep your dependencies updated.
+          </p>
+
+          <span class="image fit">
+						<a target="_blank"  href="/images/blog/gulp-inject/learning-curve.png">
+							<img src="/images/blog/gulp-inject/learning-curve.png" alt="Learning Curve" />
+						</a>
+					</span>
+
+          <p>
+            I think most developers will agree that these frameworks generally increase efficiency in medium to large projects over time.
+            They are flexible, maintainable, and after learning how they work they can make a lot of interactions with HTML
+            easier to manage. But what if you have a relatively smaller project with little user interaction. For example,
+            a single page website listing information about a small company or an aspiring tech blog like this one.
+          </p>
+
+          <p>I tried out a new tool called <a href="https://www.npmjs.com/package/gulp-inject">Gulp-Inject</a> that can inject
+            pieces of reusable HTML as many web pages as you need. It’s an HTML comment based framework that’s super easy
+            to use and understand.
+          </p>
+          <h2 class="text-center">Example time!</h2>
+
+          <p>
+
+            Here are some obvious reusable pieces of HTML you would want to inject into your pages
+          </p>
+
+          <code class="margin-sm">
+<h4 class="text-center">partials/head.html</h4>
+          <pre class="scroll-x">
+&lt;head&gt;
+  &lt;title&gt;JBurchard.com | Blog&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;
+  &lt;meta name="keywords" content="Josiah Burchard, Software Developer, JBurchard"&gt;
+  &lt;meta name="twitter:card" content="summary"&gt;
+  &lt;meta name="twitter:site" content="@josiahburchard"&gt;
+  &lt;meta name="twitter:image" content="https://jburchard.com/images/josiah-burchard.jpg"&gt;
+  &lt;meta property="og:type" content="website"&gt;
+  &lt;meta property="og:site_name" content="JBurchard.com"&gt;
+  &lt;meta property="og:image" content="https://jburchard.com/images/josiah-burchard.jpg"&gt;
+  &lt;meta property="og:image:width" content="200"&gt;
+  &lt;meta property="og:image:height" content="200"&gt;
+  &lt;link rel="stylesheet" href="/lib/css/main.css" /&gt;
+  &lt;link rel="stylesheet" href="/app.css" /&gt;
+  &lt;link rel="stylesheet" href="/lib/css/fontawesome.min.css" /&gt;
+&lt;/head&gt;
+</pre>
+</code>
+
+          <code class="margin-sm">
+          <h4 class="text-center">partials/footer.html</h4>
+          <pre class="scroll-x">
+&lt;footer&gt;
+  &lt;ul class="footer-menu"&gt;
+    &lt;li&gt;&amp;copy; JBurchard.com. All rights reserved.&lt;/li&gt;
+    &lt;li&gt;Footers always make me think of feet&lt;/li&gt;
+    &lt;li&gt;Feet are kind of gross, right?&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/footer&gt;
+</pre>
+</code>
+          <p>Now when you are writing your blog posts, you can insert these partials wherever you want them with a special html
+            comment. </p>
+
+          <code class="margin-sm">
+          <h4 class="text-center">blog.html</h4>
+          <pre class="scroll-x">
+blog.html
+&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+&lt;!-- inject:header:html --&gt;
+&lt;!-- endinject --&gt;
+&lt;div&gt;Hey all. Nice to see you reading this blog post.&lt;/div&gt;
+&lt;!-- inject:footer:html --&gt;
+&lt;!-- endinject --&gt;
+&lt;/html&gt;
+</pre>
+          </code>
+          <p>
+            Alright, is it safe to say you’re intrigued? There’s just one more step to use Gulp-Inject, you have to run a script called
+            a Gulp File. This script will use a couple tools called Node and Gulp (which you can install here[node install]
+            and then here[gulp install]) to analyze your code and inject the right documents.
+          </p>
+
+          <p>Here’s just a snippet, but you can view the full thing on <a href="https://github.com/josiah1888/gulp-inject-demo">Github</a>            or <a href="https://josiah1888.github.io/gulp-inject-demo/">Live</a>. </p>
+
+
+          <pre>
++--gulpFile.js
++--package.json
++--src
+|  \--index.html
+|  \--sales.html
+|  \--assets
+|     \--app.js
+|     \--styles.css
+|  \--partials
+|     \--footer.html
+|     \--head.html
+|     \--header.html
+|     \--scripts.html
+</pre>
+
+          <code class="margin-sm">
+          <h4 class="text-center">gulpFile.js</h4>
+          <pre class="scroll-x">
+var gulp = require('gulp');
+var inject = require('gulp-inject');
+
+// Define tasks for gulp to execute
+gulp.task('default', ['inject', 'assets'], function() { });
+
+gulp.task('inject', function() {
+    
+    // Grab all the html files, except the partials
+    return gulp.src(['src/**/*.html', '!src/partials/**'])
+
+        // Inject the partials into the regular html files
+        .pipe(inject(gulp.src(['src/partials/head.html']), createInjectOptions('head')))
+        .pipe(inject(gulp.src(['src/partials/header.html']), createInjectOptions('header')))
+        .pipe(inject(gulp.src(['src/partials/footer.html']), createInjectOptions('footer')))
+        .pipe(inject(gulp.src(['src/partials/scripts.html']), createInjectOptions('scripts')))
+
+        // Copy the results into dist/
+        .pipe(gulp.dest('dist/'));
+});
+
+gulp.task('assets', function() {
+    // Copy assets (js, css) into dist/
+    return gulp.src(['src/assets/**'])
+        .pipe(gulp.dest('dist/'));
+});
+
+function createInjectOptions(tagName) {
+    return {
+        starttag: `&lt;!-- inject:${tagName}:{{ext}} --&gt;`,
+        transform: function (filePath, file) {
+            return file.contents.toString('utf8')
+        }
+    };
+}
+</pre>
+</code>
+
+          <code class="margin-sm">
+          <h4 class="text-center">index.html</h4>
+          <pre class="scroll-x">
+&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+  &lt;title&gt;Blog de JBurchard&lt;/title&gt;
+  &lt;!-- inject:head:html --&gt;
+  &lt;!-- endinject --&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;!-- inject:header:html --&gt;
+  &lt;!-- endinject --&gt;
+
+  &lt;div class="container"&gt;
+    &lt;div class="jumbotron"&gt;
+      &lt;h3&gt;Welcome to the homepage, ya'll.&lt;/h3&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- inject:footer:html --&gt;
+  &lt;!-- endinject --&gt;
+
+  &lt;!-- inject:scripts:html --&gt;
+  &lt;!-- endinject --&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</pre>
+</code>
+          <code class="margin-sm">
+          <h4 class="text-center">sales.html</h4>
+          <pre class="scroll-x">
+&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+  &lt;title&gt;Sales Department | Blog de JBurchard&lt;/title&gt;
+  &lt;!-- inject:head:html --&gt;
+  &lt;!-- endinject --&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;!-- inject:header:html --&gt;
+  &lt;!-- endinject --&gt;
+
+  &lt;div class="container"&gt;
+    &lt;div class="jumbotron"&gt;
+      &lt;h3&gt;Hey, uh. Want to buy something?&lt;/h3&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- inject:footer:html --&gt;
+  &lt;!-- endinject --&gt;
+
+  &lt;!-- inject:scripts:html --&gt;
+  &lt;!-- endinject --&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</pre>
+</code>
+          <p>There’s no bells and whistles to this approach, but it is incredibly easy to see exactly what is going on in the
+            whole project. Nothing is hidden in the internals of a massive framework. So if your needs are too small for
+            a framework giant, or if you like the hipster/hacker way of going against the crowd, build something with Gulp-Inject.
+          </p>
+
+          <hr />
+          <p>
+            I'm sure there's plenty of programming hipsters out there looking to try something different. Let me know what you're up
+            to at
+            <a target="_blank" href="mailto:josiah@jburchard.com">josiah@jburchard.com</a> or
+            <a target="_blank" href="https://twitter.com/JosiahBurchard">@JosiahBurchard</a> on Twitter
+          </p>
+        </div>
+        <div class="text-center"><small>January 2017</small></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- inject:footer:html -->
+  <!-- endinject -->
+
+  <!-- inject:scripts:html -->
+  <!-- endinject -->
+</body>
+
+</html>
