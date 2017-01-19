@@ -34,32 +34,36 @@
           </p>
           <p>
 
-            That kind of power is not for everybody, because with great power comes a great learning curve, huge amounts of boilerplate
-            framework-specific code and the maintenance required to keep your dependencies updated.
+            That kind of power is not for everyone. With great power comes a great learning curve, huge amounts of boilerplate framework-specific
+            code, and the maintenance required to keep your dependencies updated.
           </p>
 
-          <span class="image fit">
-						<a target="_blank"  href="/images/blog/gulp-inject/learning-curve.png">
-							<img src="/images/blog/gulp-inject/learning-curve.png" alt="Learning Curve" />
-						</a>
+          <span class="image fit text-center">
+            <figure>
+              <h2>Efficiency vs. Time</h2>
+              <img src="/images/blog/gulp-inject/learning-curve.png" alt="Learning Curve" />
+              <figcaption>
+                <div>A huge framework (Angular, React) comes with a huge learning curve and boilerplate code that can't always be avoided. This drastically reduces your efficiency for the ramp up time. </div>
+                <div><small>WARNING: Not actual science</small></div>
+              </figcaption>
+            </figure>
 					</span>
 
           <p>
             I think most developers will agree that these frameworks generally increase efficiency in medium to large projects over time.
-            They are flexible, maintainable, and after learning how they work they can make a lot of interactions with HTML
-            easier to manage. But what if you have a relatively smaller project with little user interaction. For example,
+            They are flexible, maintainable, and after learning how they work they can make a lot of interactions with the
+            DOM easier to manage. But what if you have a relatively smaller project with little user interaction? For example,
             a single page website listing information about a small company or an aspiring tech blog like this one.
           </p>
 
-          <p>I tried out a new tool called <a href="https://www.npmjs.com/package/gulp-inject">Gulp-Inject</a> that can inject
-            pieces of reusable HTML as many web pages as you need. It’s an HTML comment based framework that’s super easy
-            to use and understand.
+          <p>I tried out a new tool called <a target="_blank" href="https://www.npmjs.com/package/gulp-inject">Gulp-Inject</a>            that can inject pieces of reusable HTML into as many web pages as you need. It’s an HTML comment based framework
+            that’s super easy to use and understand.
           </p>
           <h2 class="text-center">Example time!</h2>
 
           <p>
 
-            Here are some obvious reusable pieces of HTML you would want to inject into your pages
+            Here are some common reusable pieces of HTML, or partials, you would want to inject into your pages
           </p>
 
           <code class="margin-sm">
@@ -96,7 +100,7 @@
 &lt;/footer&gt;
 </pre>
 </code>
-          <p>Now when you are writing your blog posts, you can insert these partials wherever you want them with a special html
+          <p>Now when you are writing your blog posts, you can insert these partials wherever you want them with a special HTML
             comment. </p>
 
           <code class="margin-sm">
@@ -115,11 +119,11 @@ blog.html
           </code>
           <p>
             Alright, is it safe to say you’re intrigued? There’s just one more step to use Gulp-Inject, you have to run a script called
-            a Gulp File. This script will use a couple tools called Node and Gulp (which you can install here[node install]
-            and then here[gulp install]) to analyze your code and inject the right documents.
+            a Gulp File. This script will use a couple tools called <a target="_blank" href="https://nodejs.org/en/download/">Node</a>            and <a target="_blank" href="https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md">Gulp</a> to
+            analyze your code and inject the right documents.
           </p>
 
-          <p>Here’s just a snippet, but you can view the full thing on <a href="https://github.com/josiah1888/gulp-inject-demo">Github</a>            or <a href="https://josiah1888.github.io/gulp-inject-demo/">Live</a>. </p>
+          <p>Here’s just a snippet, but you can view the full thing on <a target="_blank" href="https://github.com/josiah1888/gulp-inject-demo">Github</a>            or <a target="_blank" href="https://josiah1888.github.io/gulp-inject-demo/">Live</a>. </p>
 
 
           <pre>
