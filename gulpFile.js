@@ -61,7 +61,8 @@ gulp.task('sitemap', function(done) {
         { url: '/blog/'},
         { url: '/blog/scoring-100-pagespeed-insights'},
         { url: '/blog/academic-research-computer-science'},
-        ];
+        { url: '/blog/gulp-inject-web-framework-for-hipsters'},
+    ];
  
     var sitemap = sm.createSitemap({
         hostname: 'https://jburchard.com', 
