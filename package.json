@@ -17,7 +17,9 @@
     "gulp-uncss": "^1.0.5",
     "gulp-useref": "^3.1.0",
     "live-server": "*",
-    "sitemap": "^1.8.1"
+    "run-sequence": "^1.2.2",
+    "sitemap": "^1.8.1",
+    "sw-precache": "^4.3.0"
   },
   "devDependencies": {},
   "scripts": {

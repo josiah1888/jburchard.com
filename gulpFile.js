@@ -10,10 +10,24 @@ var htmlmin = require('gulp-htmlmin');
 var useref = require('gulp-useref');
 var inject = require('gulp-inject');
 var gIf = require('gulp-if');
+var swPrecache = require('sw-precache');
+var path = require('path');
+var run = require('run-sequence');
+var fs = require('fs');
 
 var DIST = 'dist/';
 
-gulp.task('build', ['build-all', 'sitemap'], function() {
+gulp.task('build', function(callback) {
+    run(
+        'sitemap',
+        'build-assets',
+        'build-views',
+        'generate-service-worker-dist',
+        callback
+    );
+});
+
+gulp.task('build-views', function() {
     var html = filter(['**/*.html'], {restore: true});
 
     return gulp.src(['src/**/*.html', '!**/googledeb6aa7f54e627ec.html', '!src/partials/**'])
@@ -33,7 +47,7 @@ gulp.task('build', ['build-all', 'sitemap'], function() {
         .pipe(gulp.dest(DIST));
 });
 
-gulp.task('build-all', function() {
+gulp.task('build-assets', function() {
     var js = filter(['**/*.js'], {restore: true});
     var css = filter(['**/*.css'], {restore: true});
     var images = filter(['**/*.gif', '**/*.jpg', '**/*.svg', '**/*.png'], {restore: true});
@@ -54,7 +68,6 @@ gulp.task('build-all', function() {
 
 gulp.task('sitemap', function(done) {
     var sm = require('sitemap');
-    var fs = require('fs');
 
     var pages = [
         { url: '/'},
@@ -68,6 +81,10 @@ gulp.task('sitemap', function(done) {
         hostname: 'https://jburchard.com', 
         urls: pages
     });
+
+    if (!fs.existsSync(DIST)){
+        fs.mkdirSync(DIST);
+    }
  
     fs.writeFileSync(DIST + 'sitemap.xml', sitemap.toString());
     return done();
@@ -93,4 +110,49 @@ function injectSidebarLinks() {
                 <li><a class="sidebar__link" href="#projects">Personal Projects</a></li>` 
         }
     }
+}
+
+gulp.task('generate-service-worker-dist', function(callback) {
+  writeServiceWorkerFile(DIST, true, callback);
+});
+
+function writeServiceWorkerFile(rootDir, handleFetch, callback) {
+  var config = {
+    cacheId: 'jburchard-com-cache',
+    handleFetch: handleFetch,
+    runtimeCaching: [{
+      // See https://github.com/GoogleChrome/sw-toolbox#methods
+      urlPattern: /(images|lib)\//,
+      handler: 'cacheFirst',
+      // See https://github.com/GoogleChrome/sw-toolbox#options
+      options: {
+        cache: {
+          name: 'runtime-cache'
+        }
+      }
+    }],
+    staticFileGlobs: [
+      rootDir + '/index.html',
+      rootDir + '/blog/**/*.html',
+      rootDir + '/**.css',
+      rootDir + '/**.js',
+    ],
+    stripPrefix: rootDir,
+    // verbose defaults to false, but for the purposes of this demo, log more.
+    verbose: true
+  };
+
+  swPrecache.generate(config, function(err, fileString) {
+      if (err) {
+          return console.log('Uh Oh! Trouble writing the service worker pre cache!');
+      }
+
+      let formattedFileString = fileString.replace(/(index)?\.html"/gi, '"');
+
+        fs.writeFileSync(path.join(rootDir, 'service-worker.js'), formattedFileString, function(err) {
+            if(err) {
+                return console.log(err);
+            }
+        }); 
+  });
 }
